@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:56:17 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 19:57:52 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 20:44:14 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,16 @@ void Brain::setIdea(const string _idea) {
     }
 }
 
+void Brain::setIdea(size_t i, const string _idea) {
+    if (i < 0 || i > 99) return;
+    ideas[i] = _idea;
+}
+
 string Brain::getIdea() const { return ideas[0]; }
+
+string Brain::getIdea(size_t i) const {
+    if (i > 99) i = 0;
+    return ideas[i];
+}
 
 /* ************************ [^] GET & SET IDEA [^] ************************ */

@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:23:15 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 18:02:27 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 20:44:25 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ class Brain {
 
     /* **** [v] Get & Set Idea [v] **** */
     void setIdea(const string _idea);
+    void setIdea(size_t i, const string _idea);
     string getIdea() const;
+    string getIdea(size_t i) const;
     /* **** [^] Get & Set Idea [^] **** */
 };
 
