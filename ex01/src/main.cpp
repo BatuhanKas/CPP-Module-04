@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 20:06:18 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 20:11:49 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,17 @@ int main() {
     cout << LIGHT_CYAN << "/* ************* [v] Ex01 [v] ************* */"
          << RESET << endl;
 
+    /* ********** [v] Counter Control [v] ********** */
     if (COUNTER < 2) {
         cout << WHITE << "Counter have to be greater than 1" << RESET << endl;
         return 0;
     }
+    /* ********** [^] Counter Control [^] ********** */
 
     Animal* animals[COUNTER];
 
     try {
+        /* ********* [v] Memory Allocation [v] ********* */
         for (int i = 0; i < COUNTER; i++) {
             if (i % 2 == 0) {
                 animals[i] = new Dog("Today's air is sunny!");
@@ -106,14 +109,19 @@ int main() {
                 animals[i] = new Cat("Today's air is rainy!");
             }
         }
+        /* ********* [^] Memory Allocation [^] ********* */
 
+        /* ********** [v] Screen Output [v] ********** */
         for (int i = 0; i < COUNTER; i++) {
             animals[i]->whoAmI();
         }
+        /* ********** [^] Screen Output [^] ********** */
 
+        /* ************* [v] Delete [v] ************* */
         for (size_t i = 0; i < COUNTER; i++) {
             delete animals[i];
         }
+        /* ************* [^] Delete [^] ************* */
 
     } catch (exception& e) {
         cerr << "Memory Allocation Error: " << e.what() << endl;
@@ -121,9 +129,9 @@ int main() {
             delete animals[i];
         }
     }
-
     cout << LIGHT_CYAN << "/* ************* [^] Ex01 [^] ************* */"
          << RESET << endl;
+    /* ************************ [^] Ex01 [^] ************************ */
 }
 
 /* ****************************** [^] MAIN [^] ****************************** */
