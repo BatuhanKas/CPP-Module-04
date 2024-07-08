@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:11 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 12:13:44 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 12:58:38 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ Cat::~Cat() { cout << "Destructor Worked (Cat)" << endl; };
 
 /* ************************* [v] CAT MAKE SOUND [v] ************************* */
 
-void Cat::makeSound() const { cout << "Meow." << endl; }
+void Cat::makeSound() const {
+    cout << WHITE << "Cat Making Sound: " << YELLOW << "Meow" << endl;
+}
 
 /* ************************* [^] CAT MAKE SOUND [^] ************************* */

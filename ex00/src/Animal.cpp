@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:42 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 12:13:11 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 12:52:42 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void Animal::setType(const string _type) { type = _type; };
 
 /* *********************** [v] ANIMAL MAKE SOUND [v] *********************** */
 
-void Animal::makeSound() const { cout << "Animal Sound" << endl; };
+void Animal::makeSound() const { cout << YELLOW << "Animal don't have a sound!" << RESET << endl; };
 
 /* *********************** [^] ANIMAL MAKE SOUND [^] *********************** */

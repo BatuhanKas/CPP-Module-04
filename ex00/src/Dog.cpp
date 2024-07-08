@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 12:14:09 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 12:53:40 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ Dog::~Dog() { cout << "Destructor Worked (Dog)" << endl; };
 
 /* ************************ [v] DOG MAKE SOUND [v] ************************ */
 
-void Dog::makeSound() const { cout << "Woof Woof." << endl; };
+void Dog::makeSound() const {
+    cout << WHITE << "Dog Making Sound: " << YELLOW << "Woof Woof" << RESET
+         << endl;
+}
 
 /* ************************ [^] DOG MAKE SOUND [^] ************************ */
