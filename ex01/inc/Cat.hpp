@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:39:44 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 15:29:27 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 19:09:58 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,17 @@ class Cat : public Animal {
    public:
     /* **** [v] Orthodox Form [v] **** */
     Cat();
+    Cat(const string idea);
     Cat(const Cat &oth);
     Cat &operator=(const Cat &oth);
     ~Cat();
     /* **** [^] Orthodox Form [^] **** */
+
+    /* * [v] Get & Set Functions [v] * */
+    void setBrain(const string idea);
+    void setBrain(const Brain &oth);
+    Brain &getBrain() const;
+    /* * [^] Get & Set Functions [^] * */
 
     /* ****** [v] Functions [v] ****** */
     void whoAmI() const;

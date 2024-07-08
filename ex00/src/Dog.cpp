@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 14:49:39 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 18:55:21 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void Dog::makeSound() const {
 
 void Dog::whoAmI() const {
     cout << "---------------------------" << endl;
-    cout << WHITE << "My's type is: " << BLUE << getType() << RESET << endl;
+    cout << WHITE << "My type is: " << BLUE << getType() << RESET << endl;
     makeSound();
     cout << "---------------------------" << endl;
 }

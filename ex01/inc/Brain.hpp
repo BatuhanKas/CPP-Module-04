@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:23:15 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 15:55:59 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 18:02:27 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 #include <iostream>
 
+using std::cout;
+using std::endl;
 using std::string;
 
 /* *************************** [^] INCLUDES [^] *************************** */
@@ -34,10 +36,16 @@ class Brain {
    public:
     /* **** [v] Orthodox Form [v] **** */
     Brain();
+    Brain(string idea);
     Brain(const Brain &oth);
     Brain &operator=(const Brain &oth);
     ~Brain();
     /* **** [^] Orthodox Form [^] **** */
+
+    /* **** [v] Get & Set Idea [v] **** */
+    void setIdea(const string _idea);
+    string getIdea() const;
+    /* **** [^] Get & Set Idea [^] **** */
 };
 
 /* ************************** [^] BRAIN CLASS [^] ************************** */

@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 16:09:37 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 20:06:18 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 #include "../inc/WrongCat.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
+
+/* ************************* [v] ANIMAL COUNTER [v] ************************* */
+
+#define COUNTER 10
+
+/* ************************* [^] ANIMAL COUNTER [^] ************************* */
 
 /* ****************************** [v] MAIN [v] ****************************** */
 
@@ -79,7 +85,44 @@ int main() {
     cout << RED << "/* ****** [^] Wrong Animal Class [^] ****** */" << RESET
          << endl;
     /* ****** [^] Wrong Animal Class [^] ****** */
-    cout << LIGHT_CYAN << "/* ************* [v] Ex00 [v] ************* */"
+    cout << LIGHT_CYAN << "/* ************* [^] Ex00 [^] ************* */"
+         << RESET << endl;
+    /* ************************ [v] Ex01 [v] ************************ */
+    cout << LIGHT_CYAN << "/* ************* [v] Ex01 [v] ************* */"
+         << RESET << endl;
+
+    if (COUNTER < 2) {
+        cout << WHITE << "Counter have to be greater than 1" << RESET << endl;
+        return 0;
+    }
+
+    Animal* animals[COUNTER];
+
+    try {
+        for (int i = 0; i < COUNTER; i++) {
+            if (i % 2 == 0) {
+                animals[i] = new Dog("Today's air is sunny!");
+            } else {
+                animals[i] = new Cat("Today's air is rainy!");
+            }
+        }
+
+        for (int i = 0; i < COUNTER; i++) {
+            animals[i]->whoAmI();
+        }
+
+        for (size_t i = 0; i < COUNTER; i++) {
+            delete animals[i];
+        }
+
+    } catch (exception& e) {
+        cerr << "Memory Allocation Error: " << e.what() << endl;
+        for (size_t i = 0; i < COUNTER; i++) {
+            delete animals[i];
+        }
+    }
+
+    cout << LIGHT_CYAN << "/* ************* [^] Ex01 [^] ************* */"
          << RESET << endl;
 }
 

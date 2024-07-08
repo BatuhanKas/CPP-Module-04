@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:11 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 15:03:02 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/08 18:55:12 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Cat::makeSound() const {
 
 void Cat::whoAmI() const {
     cout << "---------------------------" << endl;
-    cout << WHITE << "My's type is: " << BLUE << getType() << RESET << endl;
+    cout << WHITE << "My type is: " << BLUE << getType() << RESET << endl;
     makeSound();
     cout << "---------------------------" << endl;
 }
