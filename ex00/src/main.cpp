@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 18:11:21 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 10:55:06 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 /* ****************************** [v] MAIN [v] ****************************** */
 
 int main() {
+    /* ********* [v] Animal Class [v] ********* */
     cout << LIGHT_CYAN << "/* ************* [v] Ex00 [v] ************* */"
          << RESET << endl;
-    /* ********* [v] Animal Class [v] ********* */
     cout << RED << "/* ********* [v] Animal Class [v] ********* */" << RESET
          << endl;
     try {
@@ -37,10 +37,10 @@ int main() {
         /* ***** [^] Memory Allocation [^] ***** */
 
         /* ******* [v] Screen Output [v] ******* */
-        meta->whoAmI();
-        j->whoAmI();
-        i->whoAmI();
-        c1->whoAmI();
+        meta->display();
+        j->display();
+        i->display();
+        c1->display();
         /* ******* [^] Screen Output [^] ******* */
 
         /* ******* [v] Delete [v] ******* */
@@ -65,8 +65,8 @@ int main() {
         /* ***** [^] Memory Allocation [^] ***** */
 
         /* ******* [v] Screen Output [v] ******* */
-        wranimal->whoAmI();
-        wrcat->whoAmI();
+        wranimal->display();
+        wrcat->display();
         /* ******* [^] Screen Output [^] ******* */
 
         /* ******* [v] Delete [v] ******* */
@@ -78,9 +78,9 @@ int main() {
     }
     cout << RED << "/* ****** [^] Wrong Animal Class [^] ****** */" << RESET
          << endl;
-    /* ****** [^] Wrong Animal Class [^] ****** */
     cout << LIGHT_CYAN << "/* ************* [^] Ex00 [^] ************* */"
          << RESET << endl;
+    /* ****** [^] Wrong Animal Class [^] ****** */
 }
 
 /* ****************************** [^] MAIN [^] ****************************** */

@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:59:53 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 15:02:50 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 10:43:08 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class WrongCat : public WrongAnimal {
     /* **** [^] Orthodox Form [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    void whoAmI() const;
+    void display() const;
     void makeSound() const;
     /* ****** [^] Functions [^] ****** */
 };

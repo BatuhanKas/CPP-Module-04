@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:39:44 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 19:09:58 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 10:43:08 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Cat : public Animal {
     /* * [^] Get & Set Functions [^] * */
 
     /* ****** [v] Functions [v] ****** */
-    void whoAmI() const;
+    void display() const;
     void makeSound() const;
     /* ****** [^] Functions [^] ****** */
 };

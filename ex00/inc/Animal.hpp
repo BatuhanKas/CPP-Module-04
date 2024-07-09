@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:44 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 14:54:31 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 10:43:08 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class Animal {
     /* **** [^] Get & Set Type [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    virtual void whoAmI() const;
+    virtual void display() const;
     virtual void makeSound() const;
     /* ****** [^] Functions [^] ****** */
 };

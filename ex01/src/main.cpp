@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 20:39:54 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 11:19:09 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,105 +29,44 @@
 /* ****************************** [v] MAIN [v] ****************************** */
 
 int main() {
-    cout << LIGHT_CYAN << "/* ************* [v] Ex00 [v] ************* */"
-         << RESET << endl;
-    /* ********* [v] Animal Class [v] ********* */
-    cout << RED << "/* ********* [v] Animal Class [v] ********* */" << RESET
-         << endl;
-    try {
-        /* ***** [v] Memory Allocation [v] ***** */
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
-        Cat* c1 = new Cat();
-        /* ***** [^] Memory Allocation [^] ***** */
-
-        /* ******* [v] Screen Output [v] ******* */
-        meta->whoAmI();
-        j->whoAmI();
-        i->whoAmI();
-        c1->whoAmI();
-        /* ******* [^] Screen Output [^] ******* */
-
-        /* ******* [v] Delete [v] ******* */
-        delete c1;
-        delete i;
-        delete j;
-        delete meta;
-        /* ******* [^] Delete [^] ******* */
-    } catch (const exception& e) {
-        cerr << "Memory Allocation Error: " << e.what() << endl;
-    }
-    cout << RED << "/* ********* [^] Animal Class [^] ********* */" << RESET
-         << endl;
-    /* ********* [^] Animal Class [^] ********* */
-    /* ****** [v] Wrong Animal Class [v] ****** */
-    cout << RED << "/* ****** [v] Wrong Animal Class [v] ****** */" << RESET
-         << endl;
-    try {
-        /* ***** [v] Memory Allocation [v] ***** */
-        const WrongAnimal* wranimal = new WrongAnimal();
-        const WrongAnimal* wrcat = new WrongCat();
-        /* ***** [^] Memory Allocation [^] ***** */
-
-        /* ******* [v] Screen Output [v] ******* */
-        wranimal->whoAmI();
-        wrcat->whoAmI();
-        /* ******* [^] Screen Output [^] ******* */
-
-        /* ******* [v] Delete [v] ******* */
-        delete wrcat;
-        delete wranimal;
-        /* ******* [^] Delete [^] ******* */
-    } catch (const exception& e) {
-        cerr << "Memory Allocation Error: " << e.what() << endl;
-    }
-    cout << RED << "/* ****** [^] Wrong Animal Class [^] ****** */" << RESET
-         << endl;
-    /* ****** [^] Wrong Animal Class [^] ****** */
-    cout << LIGHT_CYAN << "/* ************* [^] Ex00 [^] ************* */"
-         << RESET << endl;
     /* ************************ [v] Ex01 [v] ************************ */
     cout << LIGHT_CYAN << "/* ************* [v] Ex01 [v] ************* */"
          << RESET << endl;
-
-    /* ********** [v] Counter Control [v] ********** */
-    if (COUNTER < 2) {
-        cout << WHITE << "Counter have to be greater than 1" << RESET << endl;
+    /* ***** [v] Counter Control [v] ***** */
+    if (COUNTER < 2 || COUNTER % 2 != 0) {
+        cout << WHITE << "---------------------------------------" << endl;
+        cout << "---Counter have to be greater than 1---" << endl;
+        cout << "---And divided by 2 must be 0---" << endl;
+        cout << "---------------------------------------" << RESET << endl;
         return 0;
     }
-    /* ********** [^] Counter Control [^] ********** */
+    /* ***** [^] Counter Control [^] ***** */
 
+    /* **** [v] Pointer Array [v] **** */
     Animal* animals[COUNTER];
+    /* **** [^] Pointer Array [^] **** */
 
     try {
         /* ********* [v] Memory Allocation [v] ********* */
         for (int i = 0; i < COUNTER; i++) {
-            if (i % 2 == 0) {
+            if (i % 2 == 0)
                 animals[i] = new Dog("Today's air is sunny!");
-            } else {
+            else
                 animals[i] = new Cat("Today's air is rainy!");
-            }
         }
         /* ********* [^] Memory Allocation [^] ********* */
 
         /* ********** [v] Screen Output [v] ********** */
-        for (int i = 0; i < COUNTER; i++) {
-            animals[i]->whoAmI();
-        }
+        for (int i = 0; i < COUNTER; i++) animals[i]->display();
         /* ********** [^] Screen Output [^] ********** */
 
         /* ************* [v] Delete [v] ************* */
-        for (size_t i = 0; i < COUNTER; i++) {
-            delete animals[i];
-        }
+        for (size_t i = 0; i < COUNTER; i++) delete animals[i];
         /* ************* [^] Delete [^] ************* */
 
     } catch (exception& e) {
         cerr << "Memory Allocation Error: " << e.what() << endl;
-        for (size_t i = 0; i < COUNTER; i++) {
-            delete animals[i];
-        }
+        for (size_t i = 0; i < COUNTER; i++) delete animals[i];
     }
     cout << LIGHT_CYAN << "/* ************* [^] Ex01 [^] ************* */"
          << RESET << endl;

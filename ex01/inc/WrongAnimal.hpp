@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:54:28 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/08 15:48:51 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 10:47:06 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class WrongAnimal {
     /* **** [^] Get & Set Type [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    void whoAmI() const;
+    void display() const;
     void makeSound() const;
     /* ****** [^] Functions [^] ****** */
 };
