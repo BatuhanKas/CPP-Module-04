@@ -1,61 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 14:54:28 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 12:12:37 by bkas             ###   ########.fr       */
+/*   Created: 2024/07/08 14:39:44 by bkas              #+#    #+#             */
+/*   Updated: 2024/07/09 11:58:30 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] DEFINES [v] **************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
-
-#define YELLOW "\033[1;33m"
-#define LIGHT_GREEN "\033[1;32m"
-#define WHITE "\033[1;37m"
-#define RED "\033[0;31m"
-#define GREEN "\033[0;32m"
-#define BLUE "\033[0;34m"
-#define RESET "\033[0m"
-#define LIGHT_CYAN "\033[1;36m"
+#ifndef CAT_HPP
+#define CAT_HPP
 
 /* **************************** [^] DEFINES [^] **************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include <iostream>
-
-using std::cerr;
-using std::cout;
-using std::endl;
-using std::exception;
-using std::string;
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
-/* *********************** [v] WRONG ANIMAL CLASS [v] *********************** */
+/* *************************** [v] CAT CLASS [v] *************************** */
 
-class WrongAnimal {
-   protected:
-    string type;
+class Cat : public AAnimal {
+   private:
+    Brain *brain;
 
    public:
     /* **** [v] Orthodox Form [v] **** */
-    WrongAnimal();
-    WrongAnimal(const WrongAnimal &oth);
-    WrongAnimal &operator=(const WrongAnimal &oth);
-    virtual ~WrongAnimal();
+    Cat();
+    Cat(const string idea);
+    Cat(const Cat &oth);
+    Cat &operator=(const Cat &oth);
+    ~Cat();
     /* **** [^] Orthodox Form [^] **** */
 
-    /* **** [v] Get & Set Type [v] **** */
-    void setType(const string _type);
-    string getType() const;
-    /* **** [^] Get & Set Type [^] **** */
+    /* * [v] Get & Set Functions [v] * */
+    void setBrain(const string idea);
+    void setBrain(const Brain &oth);
+    Brain &getBrain() const;
+    /* * [^] Get & Set Functions [^] * */
 
     /* ****** [v] Functions [v] ****** */
     void display() const;
@@ -63,6 +51,6 @@ class WrongAnimal {
     /* ****** [^] Functions [^] ****** */
 };
 
-/* *********************** [^] WRONG ANIMAL CLASS [^] *********************** */
+/* *************************** [^] CAT CLASS [^] *************************** */
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 11:39:25 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/09 12:28:12 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/AAnimal.hpp"
 #include "../inc/Cat.hpp"
 #include "../inc/Dog.hpp"
 #include "../inc/WrongAnimal.hpp"
@@ -43,7 +43,7 @@ int main() {
     /* ***** [^] Counter Control [^] ***** */
 
     /* **** [v] Pointer Array [v] **** */
-    Animal* animals[COUNTER];
+    AAnimal* animals[COUNTER];
     /* **** [^] Pointer Array [^] **** */
 
     try {

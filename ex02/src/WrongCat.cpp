@@ -1,63 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:51:42 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 12:12:12 by bkas             ###   ########.fr       */
+/*   Created: 2024/07/08 11:39:11 by bkas              #+#    #+#             */
+/*   Updated: 2024/07/09 12:26:46 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include "../inc/Animal.hpp"
+#include "../inc/WrongCat.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
 /* ************************* [v] ORTHODOX FORM [v] ************************* */
 
-Animal::Animal() {
-    setType("Animal");
-    cout << "Default Constructor Worked (Animal)" << endl;
+WrongCat::WrongCat() {
+    setType("WrongCat");
+    cout << "Default Constructor Worked (WrongCat)" << endl;
 }
 
-Animal::Animal(const Animal &oth) {
+WrongCat::WrongCat(const WrongCat &oth) {
     *this = oth;
-    cout << "Copy Constructor Worked (Animal)" << endl;
+    cout << "Copy Constructor Worked (WrongCat)" << endl;
 }
 
-Animal &Animal::operator=(const Animal &oth) {
+WrongCat &WrongCat::operator=(const WrongCat &oth) {
     if (this == &oth) return *this;
     setType(oth.getType());
-    cout << "Copy Assignment Operator Worked (Animal)" << endl;
+    cout << "Copy Assignment Operator Worked (WrongCat)" << endl;
     return *this;
 }
 
-Animal::~Animal() { cout << "Destructor Worked (Animal)" << endl; };
+WrongCat::~WrongCat() { cout << "Destructor Worked (WrongCat)" << endl; };
 
 /* ************************* [^] ORTHODOX FORM [^] ************************* */
 
-/* ************************* [v] GET & SET TYPE [v] ************************* */
+/* ************************* [v] CAT MAKE SOUND [v] ************************* */
 
-string Animal::getType() const { return type; };
+void WrongCat::makeSound() const {
+    cout << WHITE << "WrongCat Making Sound: " << YELLOW << "Meow" << RESET
+         << endl;
+}
 
-void Animal::setType(const string _type) { type = _type; };
-
-/* ************************* [^] GET & SET TYPE [^] ************************* */
-
-/* *********************** [v] ANIMAL MAKE SOUND [v] *********************** */
-
-void Animal::makeSound() const {
-    cout << YELLOW << "Animal don't have a sound!" << RESET << endl;
-};
-
-/* *********************** [^] ANIMAL MAKE SOUND [^] *********************** */
+/* ************************* [^] CAT MAKE SOUND [^] ************************* */
 
 /* **************************** [v] DISPLAY [v] **************************** */
 
-void Animal::display() const {
+void WrongCat::display() const {
     cout << "---------------------------" << endl;
     cout << WHITE << "My's type is: " << BLUE << getType() << RESET << endl;
     makeSound();

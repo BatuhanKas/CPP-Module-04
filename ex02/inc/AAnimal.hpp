@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 14:54:28 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 12:12:37 by bkas             ###   ########.fr       */
+/*   Created: 2024/07/08 10:51:44 by bkas              #+#    #+#             */
+/*   Updated: 2024/07/09 11:54:58 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] DEFINES [v] **************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #define YELLOW "\033[1;33m"
 #define LIGHT_GREEN "\033[1;32m"
@@ -38,18 +38,18 @@ using std::string;
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
-/* *********************** [v] WRONG ANIMAL CLASS [v] *********************** */
+/* ************************** [v] ANIMAL CLASS [v] ************************** */
 
-class WrongAnimal {
+class AAnimal {
    protected:
     string type;
 
    public:
     /* **** [v] Orthodox Form [v] **** */
-    WrongAnimal();
-    WrongAnimal(const WrongAnimal &oth);
-    WrongAnimal &operator=(const WrongAnimal &oth);
-    virtual ~WrongAnimal();
+    AAnimal();
+    AAnimal(const AAnimal &oth);
+    AAnimal &operator=(const AAnimal &oth);
+    virtual ~AAnimal();
     /* **** [^] Orthodox Form [^] **** */
 
     /* **** [v] Get & Set Type [v] **** */
@@ -58,11 +58,11 @@ class WrongAnimal {
     /* **** [^] Get & Set Type [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    void display() const;
-    void makeSound() const;
+    virtual void display() const = 0;
+    virtual void makeSound() const = 0;
     /* ****** [^] Functions [^] ****** */
 };
 
-/* *********************** [^] WRONG ANIMAL CLASS [^] *********************** */
+/* ************************** [^] ANIMAL CLASS [^] ************************** */
 
 #endif
