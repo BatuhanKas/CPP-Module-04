@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 10:43:15 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 15:09:39 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ Cure::~Cure() { cout << "Destructor Worked (Cure)" << endl; };
 AMateria *Cure::clone() const {
     /* ***** [v] Memory Allocation [v] ***** */
     try {
-        AMateria *ptr = new Cure();
-        ptr->setType(this->getType());
+        AMateria *ptr = new Cure(*this);
         return ptr;
     } catch (exception &e) {
         cerr << "Memory Allocation Error: " << e.what() << endl;
@@ -59,3 +58,11 @@ AMateria *Cure::clone() const {
 }
 
 /* ***************************** [^] CLONE [^] ***************************** */
+
+/* ****************************** [v] USE [v] ****************************** */
+
+void Cure::use(ICharacter &target) {
+    cout << "* heals " << target.getName() << "\'s wounds *" << endl;
+}
+
+/* ****************************** [^] USE [^] ****************************** */

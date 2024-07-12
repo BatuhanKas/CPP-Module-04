@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:39:44 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 12:01:53 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 14:31:38 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Ice : public AMateria {
     /* **** [^] Orthodox Form [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    // void use(ICharacter &target);
+    void use(ICharacter &target);
     /* ****** [^] Functions [^] ****** */
 
     /* **** [v] Pure Virtual Func [v] **** */

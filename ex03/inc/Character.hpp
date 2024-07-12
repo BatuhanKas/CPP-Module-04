@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 10:44:05 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 12:01:36 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 15:01:36 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 /* *********************** [v] CHARACTER CLASS [v] *********************** */
 
-class Character : public ICharacter, public AMateria {
+class Character : public ICharacter {
    private:
     string name;
     AMateria* inv[4];

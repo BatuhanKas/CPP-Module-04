@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:23:15 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 12:01:47 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 14:31:32 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Cure : public AMateria {
     /* **** [^] Orthodox Form [^] **** */
 
     /* ****** [v] Functions [v] ****** */
-    // void use(ICharacter &target);
+    void use(ICharacter &target);
     /* ****** [^] Functions [^] ****** */
 
     /* **** [v] Pure Virtual Func [v] **** */

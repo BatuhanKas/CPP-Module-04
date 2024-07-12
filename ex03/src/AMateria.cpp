@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:42 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 16:07:46 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 14:43:42 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,12 @@ AMateria::~AMateria() { cout << "Destructor Worked (AMateria)" << endl; };
 /* ************************* [v] GET & SET TYPE [v] ************************* */
 
 void AMateria::setType(const string _type) { type = _type; };
-
 string const &AMateria::getType() const { return type; };
 
 /* ************************* [^] GET & SET TYPE [^] ************************* */
+
+/* ****************************** [v] USE [v] ****************************** */
+
+void AMateria::use(ICharacter &target) { (void)target; };
+
+/* ****************************** [^] USE [^] ****************************** */

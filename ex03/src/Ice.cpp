@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 10:30:27 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 15:10:43 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ Ice::~Ice() { cout << "Destructor Worked (Ice)" << endl; };
 AMateria *Ice::clone() const {
     /* ***** [v] Memory Allocation [v] ***** */
     try {
-        AMateria *ptr = new Ice();
-        ptr->setType(this->getType());
+        AMateria *ptr = new Ice(*this);
         return ptr;
     } catch (exception &e) {
         cerr << "Memory Allocation Error: " << e.what() << endl;
@@ -60,4 +59,10 @@ AMateria *Ice::clone() const {
 
 /* ***************************** [^] CLONE [^] ***************************** */
 
-void Ice::use(ICharacter &target) {};
+/* ****************************** [v] USE [v] ****************************** */
+
+void Ice::use(ICharacter &target) {
+    cout << "* shoots an ice bolt at " << target.getName() << " *" << endl;
+};
+
+/* ****************************** [^] USE [^] ****************************** */
