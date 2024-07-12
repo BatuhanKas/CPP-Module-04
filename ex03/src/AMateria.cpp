@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:42 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 14:43:42 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 19:18:08 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ AMateria::AMateria() {
     cout << "Default Constructor Worked (AMateria)" << endl;
 }
 
-AMateria::AMateria(string const &type) : type(this->type) {
+AMateria::AMateria(string const &type) {
+    setType(type);
     cout << "Constructor Worked (AMateria)" << endl;
 }
 

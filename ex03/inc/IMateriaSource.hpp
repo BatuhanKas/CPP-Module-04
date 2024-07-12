@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:03:41 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 16:35:33 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 17:53:24 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include <AMateria.hpp>
+#include "AMateria.hpp"
 #include <iostream>
 
 using std::cout;

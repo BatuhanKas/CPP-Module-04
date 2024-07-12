@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:18:36 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 16:44:58 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 18:25:56 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 class MateriaSource : public IMateriaSource {
    private:
     AMateria* Materia[4];
+    int numLearned;
 
    public:
     /* ***** [v] Orthodox Form [v] ***** */
@@ -38,8 +39,13 @@ class MateriaSource : public IMateriaSource {
     ~MateriaSource();
     /* ***** [^] Orthodox Form [^] ***** */
 
+    /* **** [v] Set & Get Functions [v] **** */
+    void setNumLearned(const int num);
+    int getNumLearned() const;
+    /* **** [^] Set & Get Functions [^] **** */
+
     /* ******* [v] Functions [v] ******* */
-    void learnMateria(AMateria*);
+    void learnMateria(AMateria* ptr);
     AMateria* createMateria(string const& type);
     /* ******* [^] Functions [^] ******* */
 };

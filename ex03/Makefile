@@ -6,7 +6,7 @@
 #    By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:55:08 by bkas              #+#    #+#              #
-#    Updated: 2024/07/09 11:58:50 by bkas             ###   ########.fr        #
+#    Updated: 2024/07/12 18:06:56 by bkas             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME        = animal
 
 PROJECTNAME = Animal
 
-SRC         = main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC         = main.cpp MateriaSource.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp
 
 SRCDIR      = ./src/
 
@@ -66,6 +66,10 @@ fclean: clean
 	@$(RM) $(NAME)
 	@$(ECHO) "$(MAGENTA)> $(PROJECTNAME) Binaries removed $(RESET)"
 
+f: fclean
+
+r: re
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re f r

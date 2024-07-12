@@ -6,13 +6,14 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 15:10:43 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 19:16:55 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
 #include "../inc/Ice.hpp"
+#include "../inc/ICharacter.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
@@ -29,8 +30,8 @@ Ice::Ice(const string _type) {
 }
 
 Ice::Ice(const Ice &oth) {
-    setType("ice");
-    cout << "Constructor Worked (ice)" << endl;
+    *this = oth;
+    cout << "Copy Constructor Worked (ice)" << endl;
 }
 
 Ice &Ice::operator=(const Ice &oth) {
@@ -55,6 +56,7 @@ AMateria *Ice::clone() const {
         cerr << "Memory Allocation Error: " << e.what() << endl;
     }
     /* ***** [^] Memory Allocation [^] ***** */
+    return 0;
 }
 
 /* ***************************** [^] CLONE [^] ***************************** */

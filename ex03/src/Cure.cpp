@@ -6,13 +6,14 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 15:09:39 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 19:16:50 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
 #include "../inc/Cure.hpp"
+#include "../inc/ICharacter.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
@@ -29,7 +30,7 @@ Cure::Cure(const string _type) {
 }
 
 Cure::Cure(const Cure &oth) {
-    setType("cure");
+    *this = oth;
     cout << "Constructor Worked (Cure)" << endl;
 }
 
@@ -55,6 +56,7 @@ AMateria *Cure::clone() const {
         cerr << "Memory Allocation Error: " << e.what() << endl;
     }
     /* ***** [^] Memory Allocation [^] ***** */
+    return 0;
 }
 
 /* ***************************** [^] CLONE [^] ***************************** */

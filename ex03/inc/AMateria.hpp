@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:44 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 14:41:07 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 17:57:59 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 #include <iostream>
 
-#include "ICharacter.hpp"
+class ICharacter;
 
 using std::cerr;
 using std::cout;
