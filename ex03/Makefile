@@ -6,7 +6,7 @@
 #    By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:55:08 by bkas              #+#    #+#              #
-#    Updated: 2024/07/12 18:06:56 by bkas             ###   ########.fr        #
+#    Updated: 2024/07/12 19:41:00 by bkas             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,11 +60,17 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 
 clean:
 	@$(RM) $(OBJDIR)
+	@$(RM) $(NAME).dSYM
+	@$(RM) ../.vscode
 	@$(ECHO) "$(BLUE)> $(PROJECTNAME) Directory cleaned $(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME)
 	@$(ECHO) "$(MAGENTA)> $(PROJECTNAME) Binaries removed $(RESET)"
+
+a: all
+
+c: clean
 
 f: fclean
 
@@ -72,4 +78,12 @@ r: re
 
 re: fclean all
 
-.PHONY: all clean fclean re f r
+run: all
+	@./$(NAME) | cat -e
+
+v: valgrind
+
+valgrind: all
+	@valgrind --leak-check=full --track-origins=yes ./$(NAME) | cat -e
+
+.PHONY: all clean fclean re f r run v valgrind

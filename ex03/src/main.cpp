@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 18:27:19 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 19:48:00 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,43 @@
 /* ****************************** [v] MAIN [v] ****************************** */
 
 int main() {
-    /* ************************ [v] Ex01 [v] ************************ */
-    cout << LIGHT_CYAN << "/* ************* [v] Ex01 [v] ************* */"
+    /* ************************ [v] Ex03 [v] ************************ */
+    cout << LIGHT_CYAN << "/* ************* [v] Ex03 [v] ************* */"
          << RESET << endl;
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
-    ICharacter* me = new Character("me");
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-    ICharacter* bob = new Character("bob");
-    me->use(0, *bob);
-    me->use(1, *bob);
-    delete bob;
-    delete me;
-    delete src;
-    return 0;
-    cout << LIGHT_CYAN << "/* ************* [^] Ex01 [^] ************* */"
-         << RESET << endl;
-    /* ************************ [^] Ex01 [^] ************************ */
+    try {
+        /* ***** [v] Memory Allocation [v] ***** */
+        IMateriaSource* src = new MateriaSource();
+        src->learnMateria(new Ice());
+        src->learnMateria(new Cure());
+        /* ***** [^] Memory Allocation [^] ***** */
+
+        ICharacter* me = new Character("me");
+        AMateria* tmp;
+    
+        tmp = src->createMateria("ice");
+        me->equip(tmp);
+
+        tmp = src->createMateria("cure");
+        me->equip(tmp);
+
+        ICharacter* bob = new Character("bob");
+        /* **** [v] Display [v] **** */
+        me->use(0, *bob);
+        me->use(1, *bob);
+        /* **** [^] Display [^] **** */
+
+        /* ***** [v] Delete [v] ***** */
+        delete bob;
+        delete me;
+        delete src;
+        /* ***** [^] Delete [^] ***** */
+
+        cout << LIGHT_CYAN << "/* ************* [^] Ex03 [^] ************* */"
+             << RESET << endl;
+    } catch (exception &e) {
+        cerr << "Memory Allocation Error: " << e.what() << endl;
+    }
+    /* ************************ [^] Ex03 [^] ************************ */
 }
 
 /* ****************************** [^] MAIN [^] ****************************** */
