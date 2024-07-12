@@ -1,55 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 10:30:27 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/12 10:43:15 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include "../inc/Ice.hpp"
+#include "../inc/Cure.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
 /* ************************* [v] ORTHODOX FORM [v] ************************* */
 
-Ice::Ice() {
-    setType("ice");
-    cout << "Default Constructor Worked (ice)" << endl;
+Cure::Cure() {
+    setType("cure");
+    cout << "Default Constructor Worked (Cure)" << endl;
 }
 
-Ice::Ice(const string _type) {
+Cure::Cure(const string _type) {
     setType(_type);
-    cout << "Constructor Worked (ice)" << endl;
+    cout << "Constructor Worked (Cure)" << endl;
 }
 
-Ice::Ice(const Ice &oth) {
-    setType("ice");
-    cout << "Constructor Worked (ice)" << endl;
+Cure::Cure(const Cure &oth) {
+    setType("cure");
+    cout << "Constructor Worked (Cure)" << endl;
 }
 
-Ice &Ice::operator=(const Ice &oth) {
+Cure &Cure::operator=(const Cure &oth) {
     if (this == &oth) return *this;
     type = oth.type;
-    cout << "Copy Assignment Operator Worked (Ice)" << endl;
+    cout << "Copy Assignment Operator Worked (Cure)" << endl;
     return *this;
 }
 
-Ice::~Ice() { cout << "Destructor Worked (Ice)" << endl; };
+Cure::~Cure() { cout << "Destructor Worked (Cure)" << endl; };
 
 /* ************************* [^] ORTHODOX FORM [^] ************************* */
 
 /* ***************************** [v] CLONE [v] ***************************** */
 
-AMateria *Ice::clone() const {
+AMateria *Cure::clone() const {
     /* ***** [v] Memory Allocation [v] ***** */
     try {
-        AMateria *ptr = new Ice();
+        AMateria *ptr = new Cure();
         ptr->setType(this->getType());
         return ptr;
     } catch (exception &e) {
@@ -59,5 +59,3 @@ AMateria *Ice::clone() const {
 }
 
 /* ***************************** [^] CLONE [^] ***************************** */
-
-void Ice::use(ICharacter &target) {};
