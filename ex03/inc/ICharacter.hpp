@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 14:39:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 17:58:10 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 15:26:25 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@
 
 class ICharacter {
    public:
-    /* **** [v] Orthodox Form [v] **** */
     virtual ~ICharacter(){};
-    /* **** [^] Orthodox Form [^] **** */
-
     /* ****** [v] Functions [v] ****** */
     virtual std::string const& getName() const = 0;
     virtual void equip(AMateria* m) = 0;

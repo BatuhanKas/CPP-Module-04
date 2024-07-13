@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:03:41 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 17:53:24 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 15:26:46 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
-#include "AMateria.hpp"
 #include <iostream>
+
+#include "AMateria.hpp"
 
 using std::cout;
 using std::endl;
@@ -32,8 +33,8 @@ using std::string;
 
 class IMateriaSource {
    public:
-    /* ******* [v] Functions [v] ******* */
     virtual ~IMateriaSource(){};
+    /* ******* [v] Functions [v] ******* */
     virtual void learnMateria(AMateria*) = 0;
     virtual AMateria* createMateria(string const& type) = 0;
     /* ******* [^] Functions [^] ******* */

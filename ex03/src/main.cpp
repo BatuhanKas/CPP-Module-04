@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/13 15:14:06 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 15:25:35 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,16 @@ int main() {
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
 
-        ICharacter* me = new Character("me");
         Character batu("Batu");
+        ICharacter* fiko = new Character("Fiko");
 
         AMateria* arr[] = {new Ice(), new Cure(), new Cure()};
         for (size_t i = 0; i < 3; i++) {
             batu.equip(arr[i]);
-            batu.use(i, *me);
+            batu.use(i, *fiko);
         }
 
+        ICharacter* me = new Character("me");
         AMateria* tmp;
         tmp = src->createMateria("ice");
         me->equip(tmp);
@@ -58,6 +59,7 @@ int main() {
 
         /* ***** [v] Delete [v] ***** */
         delete bob;
+        delete fiko;
         delete me;
         delete src;
         /* ***** [^] Delete [^] ***** */
