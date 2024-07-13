@@ -6,13 +6,13 @@
 #    By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:55:08 by bkas              #+#    #+#              #
-#    Updated: 2024/07/12 19:41:00 by bkas             ###   ########.fr        #
+#    Updated: 2024/07/13 11:01:55 by bkas             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = animal
+NAME        = materia
 
-PROJECTNAME = Animal
+PROJECTNAME = Interface
 
 SRC         = main.cpp MateriaSource.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp
 
@@ -61,7 +61,6 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 clean:
 	@$(RM) $(OBJDIR)
 	@$(RM) $(NAME).dSYM
-	@$(RM) ../.vscode
 	@$(ECHO) "$(BLUE)> $(PROJECTNAME) Directory cleaned $(RESET)"
 
 fclean: clean

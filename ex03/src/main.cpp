@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 19:48:00 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:21:04 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,18 @@ int main() {
         IMateriaSource* src = new MateriaSource();
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
-        /* ***** [^] Memory Allocation [^] ***** */
 
         ICharacter* me = new Character("me");
         AMateria* tmp;
-    
+
+        Character c1;
+        Ice ice;
+        Cure cure;
+
+        tmp = new Ice();
+        c1.equip(tmp);
+        c1.use(0, c1);
+
         tmp = src->createMateria("ice");
         me->equip(tmp);
 
@@ -43,6 +50,8 @@ int main() {
         me->equip(tmp);
 
         ICharacter* bob = new Character("bob");
+        /* ***** [^] Memory Allocation [^] ***** */
+
         /* **** [v] Display [v] **** */
         me->use(0, *bob);
         me->use(1, *bob);
@@ -56,7 +65,7 @@ int main() {
 
         cout << LIGHT_CYAN << "/* ************* [^] Ex03 [^] ************* */"
              << RESET << endl;
-    } catch (exception &e) {
+    } catch (const exception& e) {
         cerr << "Memory Allocation Error: " << e.what() << endl;
     }
     /* ************************ [^] Ex03 [^] ************************ */
