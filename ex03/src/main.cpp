@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/13 14:39:18 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 15:14:06 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main() {
 
         ICharacter* me = new Character("me");
         Character batu("Batu");
+
         AMateria* arr[] = {new Ice(), new Cure(), new Cure()};
         for (size_t i = 0; i < 3; i++) {
             batu.equip(arr[i]);

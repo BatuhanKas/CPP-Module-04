@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/09 11:39:25 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 15:10:13 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main() {
     if (COUNTER < 2 || COUNTER % 2 != 0) {
         cout << WHITE << "---------------------------------------" << endl;
         cout << "---Counter have to be greater than 1---" << endl;
-        cout << "---And divided by 2 must be 0---" << endl;
+        cout << "------And divided 2 two must be 0------" << endl;
         cout << "---------------------------------------" << RESET << endl;
         return 0;
     }
