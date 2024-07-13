@@ -6,7 +6,7 @@
 #    By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:55:08 by bkas              #+#    #+#              #
-#    Updated: 2024/07/13 11:01:55 by bkas             ###   ########.fr        #
+#    Updated: 2024/07/13 14:36:47 by bkas             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,6 @@ run: all
 v: valgrind
 
 valgrind: all
-	@valgrind --leak-check=full --track-origins=yes ./$(NAME) | cat -e
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 
 .PHONY: all clean fclean re f r run v valgrind
