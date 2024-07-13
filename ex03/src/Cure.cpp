@@ -6,42 +6,33 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 19:16:50 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:29:25 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* **************************** [v] INCLUDES [v] **************************** */
 
 #include "../inc/Cure.hpp"
+
 #include "../inc/ICharacter.hpp"
 
 /* **************************** [^] INCLUDES [^] **************************** */
 
 /* ************************* [v] ORTHODOX FORM [v] ************************* */
 
-Cure::Cure() {
-    setType("cure");
-    cout << "Default Constructor Worked (Cure)" << endl;
-}
+Cure::Cure() { setType("cure"); }
 
-Cure::Cure(const string _type) {
-    setType(_type);
-    cout << "Constructor Worked (Cure)" << endl;
-}
+Cure::Cure(const string _type) { setType(_type); }
 
-Cure::Cure(const Cure &oth) {
-    *this = oth;
-    cout << "Constructor Worked (Cure)" << endl;
-}
+Cure::Cure(const Cure &oth) { *this = oth; }
 
 Cure &Cure::operator=(const Cure &oth) {
     if (this == &oth) return *this;
     type = oth.type;
-    cout << "Copy Assignment Operator Worked (Cure)" << endl;
     return *this;
 }
 
-Cure::~Cure() { cout << "Destructor Worked (Cure)" << endl; };
+Cure::~Cure(){};
 
 /* ************************* [^] ORTHODOX FORM [^] ************************* */
 
@@ -64,7 +55,9 @@ AMateria *Cure::clone() const {
 /* ****************************** [v] USE [v] ****************************** */
 
 void Cure::use(ICharacter &target) {
-    cout << "* heals " << target.getName() << "\'s wounds *" << endl;
+    cout << WHITE << "----------------------" << RESET << endl;
+    cout << GREEN << "* heals " << target.getName() << "\'s wounds *" << RESET << endl;
+    cout << WHITE << "----------------------" << RESET << endl;
 }
 
 /* ****************************** [^] USE [^] ****************************** */

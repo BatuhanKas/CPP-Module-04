@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:42 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/13 11:17:33 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:26:30 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,19 @@
 
 /* ************************* [v] ORTHODOX FORM [v] ************************* */
 
-AMateria::AMateria() {
-    setType("AMateria");
-    cout << "Default Constructor Worked (AMateria)" << endl;
-}
+AMateria::AMateria() { setType("AMateria"); }
 
-AMateria::AMateria(string const &type) {
-    setType(type);
-    cout << "Constructor Worked (AMateria)" << endl;
-}
+AMateria::AMateria(string const &type) { setType(type); }
 
-AMateria::AMateria(const AMateria &oth) {
-    *this = oth;
-    cout << "Copy Constructor Worked (AMateria)" << endl;
-}
+AMateria::AMateria(const AMateria &oth) { *this = oth; }
 
 AMateria &AMateria::operator=(const AMateria &oth) {
     if (this == &oth) return *this;
     setType(oth.getType());
-    cout << "Copy Assignment Operator Worked (AMateria)" << endl;
     return *this;
 }
 
-AMateria::~AMateria() { cout << "Destructor Worked (AMateria)" << endl; };
+AMateria::~AMateria(){};
 
 /* ************************* [^] ORTHODOX FORM [^] ************************* */
 

@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:25:35 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/13 11:22:06 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:26:23 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@
 MateriaSource::MateriaSource() {
     for (size_t i = 0; i < 4; i++) Materia[i] = NULL;
     setNumLearned(0);
-    cout << "Default Constructor Worked (MateriaSource)" << endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& oth) {
     *this = oth;
-    cout << "Copy Constructor Worked (MateriaSource)" << endl;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& oth) {
@@ -38,7 +36,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& oth) {
     for (size_t i = 0; i < 4; i++) {
         Materia[i] = oth.Materia[i]->clone();
     }
-    cout << "Copy Assignment Operator Worked (MateriaSource)" << endl;
     return *this;
 }
 

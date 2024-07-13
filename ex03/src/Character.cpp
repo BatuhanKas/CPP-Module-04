@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 16:00:49 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:24:48 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,15 @@ Character::Character() {
     for (size_t i = 0; i < 4; i++) {
         inv[i] = NULL;
     }
-    cout << "Default Constructor Worked (Character)" << endl;
 }
 
 Character::Character(const string _name) : name(_name) {
     for (size_t i = 0; i < 4; i++) {
         inv[i] = NULL;
     }
-    cout << "Constructor Worked (Character)" << endl;
 }
 
-Character::Character(const Character& oth) {
-    *this = oth;
-    cout << "Copy Constructor Worked (Character)" << endl;
-}
+Character::Character(const Character& oth) { *this = oth; }
 
 Character& Character::operator=(const Character& oth) {
     if (this == &oth) return *this;
@@ -50,14 +45,12 @@ Character& Character::operator=(const Character& oth) {
         if (inv[i] == NULL || !inv[i]) {
             this->inv[i] = oth.inv[i]->clone();
         }
-    cout << "Copy Assignment Operator Worked (Character)" << endl;
     return *this;
 }
 
 Character::~Character() {
     for (size_t i = 0; i < 4; i++)
         if (inv[i]) delete inv[i];
-    cout << "Destructor Worked (Character)" << endl;
 }
 
 /* ************************* [^] Orthodox Form [^] ************************* */

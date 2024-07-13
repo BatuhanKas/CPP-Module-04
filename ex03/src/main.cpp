@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:51:45 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/13 12:21:04 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 13:02:45 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,6 @@ int main() {
         ICharacter* me = new Character("me");
         AMateria* tmp;
 
-        Character c1;
-        Ice ice;
-        Cure cure;
-
-        tmp = new Ice();
-        c1.equip(tmp);
-        c1.use(0, c1);
-
         tmp = src->createMateria("ice");
         me->equip(tmp);
 
@@ -62,7 +54,6 @@ int main() {
         delete me;
         delete src;
         /* ***** [^] Delete [^] ***** */
-
         cout << LIGHT_CYAN << "/* ************* [^] Ex03 [^] ************* */"
              << RESET << endl;
     } catch (const exception& e) {

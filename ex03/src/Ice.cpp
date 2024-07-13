@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 11:39:10 by bkas              #+#    #+#             */
-/*   Updated: 2024/07/12 19:16:55 by bkas             ###   ########.fr       */
+/*   Updated: 2024/07/13 12:30:47 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,23 @@
 
 Ice::Ice() {
     setType("ice");
-    cout << "Default Constructor Worked (ice)" << endl;
 }
 
 Ice::Ice(const string _type) {
     setType(_type);
-    cout << "Constructor Worked (ice)" << endl;
 }
 
 Ice::Ice(const Ice &oth) {
     *this = oth;
-    cout << "Copy Constructor Worked (ice)" << endl;
 }
 
 Ice &Ice::operator=(const Ice &oth) {
     if (this == &oth) return *this;
     type = oth.type;
-    cout << "Copy Assignment Operator Worked (Ice)" << endl;
     return *this;
 }
 
-Ice::~Ice() { cout << "Destructor Worked (Ice)" << endl; };
+Ice::~Ice() {};
 
 /* ************************* [^] ORTHODOX FORM [^] ************************* */
 
@@ -64,7 +60,9 @@ AMateria *Ice::clone() const {
 /* ****************************** [v] USE [v] ****************************** */
 
 void Ice::use(ICharacter &target) {
+    cout << WHITE << "-----------------------------" << RESET << endl;
     cout << "* shoots an ice bolt at " << target.getName() << " *" << endl;
+    cout << WHITE << "-----------------------------" << RESET << endl;
 };
 
 /* ****************************** [^] USE [^] ****************************** */
