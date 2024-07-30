@@ -18,50 +18,52 @@ Biz kendimizi bir nesne olarak dusunursek, farkli durumlar karsisinda, farkli da
 ***Run Time Polymorphism:*** Function Overriding
 
 ***Basit bir Function Overloading ornegi;***
-     
-       Student(); 
-       Student(string, string, int);
+```c++
+Student(); 
+Student(string, string, int);
 
-       A simple function overloading example. 
-       I can call the Constructor same name but different parameteres. 
-       That's a simple Function overloading example. 
-       If you can use the same function with same name but different parameters, 
-       that's a function overloading.
+A simple function overloading example. 
+I can call the Constructor same name but different parameteres. 
+That's a simple Function overloading example. 
+If you can use the same function with same name but different parameters, 
+that's a function overloading.
+```
 
 ***Bir bir Operator Overloading ornegi;***
 
-    bool Person::operator==(Person &oth) { 
-	    return (name == oth.name && surname == oth.surname); 
-    }
-    // main.cpp dosyasi 
-    int main() { 
-	    Person p1("batuhan", "kas", 20); 
-	    Person p2("muhammet", "mutlu", 26); 
-	    p1 == p2 ? cout << "Same person" << endl 
-				 : cout << "Different Person" << endl; 
-		p1.display(); 
-	}
-
-	iki objenin isimlerinin ayni olup olmadigini kontrol eden basit bir operator == ornegi.
+```c++
+bool Person::operator==(Person &oth) { 
+	return (name == oth.name && surname == oth.surname); 
+}
+// main.cpp dosyasi 
+int main() { 
+	Person p1("batuhan", "kas", 20); 
+	Person p2("muhammet", "mutlu", 26); 
+	p1 == p2 ? cout << "Same person" << endl 
+			 : cout << "Different Person" << endl; 
+	p1.display(); 
+}
+```
+iki objenin isimlerinin ayni olup olmadigini kontrol eden basit bir operator == ornegi.
 
 ***Function Overriding;***
 	- If you can describing again the same function in inheritence classes, that’s the function overriding.
 
 What i’m gonna say right here?
-
-    class baseClass { 
-    public: 
-	    int x; 
-	    int getx() { return x; }; 
-	    void setx(int v) { x = v; }; 
-	}; 
+```c++
+class baseClass { 
+public: 
+	int x; 
+	int getx() { return x; }; 
+	void setx(int v) { x = v; }; 
+}; 
 	
-	class derivedClass : public baseClass { 
-		public: 
-		void setx(int v) { x = v}; 
-	};
-
-	Yukarida x degiskenini 2 kez setledim. Bu ise function overriding oluyor.
+class derivedClass : public baseClass { 
+public: 
+	void setx(int v) { x = v}; 
+};
+```
+Yukarida x degiskenini 2 kez setledim. Bu ise function overriding oluyor.
 
 ***Compile Time Polymorphism nedir?***
 	- Compile-time polimorfizm, derleme zamanında belirlenen polimorfizmdir. Bu tür polimorfizm, genellikle fonksiyon aşırı yükleme (function overloading) ve operator overloading ile gerçekleşir. 
@@ -92,8 +94,7 @@ Bir fonksiyonun basina virtual keywordu koyarsak ne olur?
 
 Basit bir ornek ile anlatmak gerekirse;
 Class yapisi asagidadir. display fonksiyonu virtual olacak sekilde implemente edilmistir.
-    
-
+```c++
     HEADER DOSYASI(HPP)
     -------------------
     class  Employee {
@@ -141,6 +142,8 @@ Class yapisi asagidadir. display fonksiyonu virtual olacak sekilde implemente ed
 	for (int  i  =  0; i  <  2; i++)
 		a[i]->display();
 
+```
+
 Yukaridaki Kod blogunda main kisimda bir pointer array actim. Bu arrayin icerisinde Hem Employee'den hem de Manager'dan toplamda 2 adet obje var. Ben display fonksiyonlarini cagirdigim zaman her iki fonksiyonunda kendi display fonksiyonu calisacak. Bunu saglayan sey ise virtual keyword'udur. Cunku yukarida'da belirttigim uzere virtual keyword'u basina geldigi fonksiyonu sanallastirir ve bu fonksiyon cagirildigi zaman icerisinde hangi obje varsa o objenin ilgili fonksiyonunu calistirir. Tum olay bundan ibaret. Eger virtual yazmasaydik a pointeri sadece kendi class'ini gorebildigi icin ve fonksiyonda virtual olmadigi icin Employee sadece kendi display fonksiyonunu calistirirdi ve yanlis bir sonuc alirdik. Bu bilgilerden sonra cok rahat bu egzersizi yaparsiniz diye tahmin ediyorum. Gerekliliklerin hepsi pdf'te yaziyor.
 
 
@@ -163,17 +166,17 @@ Bir nesnenin yalnızca en üst düzeydeki yapılarını kopyalar. Bu, nesnenin i
     -   Alt nesneler üzerinde yapılan değişiklikler, hem orijinal hem de kopya nesnede yansır. Bu durum, beklenmedik yan etkilere neden olabilir.
 
 Asagida bir ***Shallow Copy*** ornegi bulunmaktadir.
-
-    class MyClass {
-	    public:
-        int *data;
-        MyClass(int val) { data = new int(val); };
-    };
+```c++
+class MyClass {
+public:
+	int *data;
+	MyClass(int val) { data = new int(val); };
+};
     
-    // main
-	MyClass obj1(10);
-    MyClass obj2 = obj1; // Shallow copy
-
+// main
+MyClass obj1(10);
+MyClass obj2 = obj1; // Shallow copy
+```
 
 ### Deep Copy (Derin Kopya)
 
@@ -190,20 +193,22 @@ Bir nesnenin hem kendisini hem de içindeki tüm alt nesneleri kopyalar. Yani, o
     -   Hafızada daha fazla yer kaplar.
 
 Asagida bir ***Deep Copy*** ornegi bulunmaktadir.
+```c++
+class MyClass {
+public:
+	int *data;
+	MyClass(int val) { data = new int(val); }
+	MyClass(const MyClass &other) {
+		data = new int(*other.data); // Deep copy
+	}
+	~MyClass() { delete data; }
+};
 
-	class MyClass {
-	public:
-	    int *data;
-	    MyClass(int val) { data = new int(val); }
-	    MyClass(const MyClass &other) {
-	        data = new int(*other.data); // Deep copy
-	    }
-	    ~MyClass() { delete data; }
-	};
+// main
+MyClass obj1(10);
+MyClass obj2 = obj1; // Deep copy
 
-	MyClass obj1(10);
-	MyClass obj2 = obj1; // Deep copy
-
+```
 Buradaki gorsel anlamaniza yardimci olabilir.
 
 ![](https://i.hizliresim.com/h58t35q.jpg)
@@ -241,7 +246,7 @@ Bu egzersizi yapabilmek icin **Pure Abstract Class(*Interface*)** bilmemiz gerek
     -   Sanal olmayan fonksiyon iceremez.
     -   Herhangi bir degisken iceremez.
     -   Türetilmiş sınıflar, tüm saf sanal fonksiyonları gerçekleştirmelidir.
-
+```c++
 			class  IAnimal {
 			public:
 				virtual  void  talk() =  0;
@@ -261,6 +266,7 @@ Bu egzersizi yapabilmek icin **Pure Abstract Class(*Interface*)** bilmemiz gerek
 			public:
 				void  talk() { cout <<  "VakVak"  << endl; }
 			};
+```
 
 Yukarida gordugunuz IAnimal class'i bir interface'dir. Ben bu class'i miras aldirdim ve talk fonksiyonunu gerceklestirdim.
 Abstract class ile cok benzer, sadece arayuz tanimliyoruz.
@@ -288,5 +294,3 @@ Gerisi Sizde
 Size bir gorsel birakacagim cok basit bir gorsel ama ustune siz de katabilirsiniz.
 
 ![](https://i.hizliresim.com/mw6mbxj.png)
-
-
